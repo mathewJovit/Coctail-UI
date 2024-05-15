@@ -1,0 +1,18 @@
+<div class="container">
+    <h1 class="title">Cocktails</h1>
+    <div class="search-container">
+      <input type="text" class="search-input" placeholder="Search cocktails..." [(ngModel)]="searchQuery" (keyup.enter)="searchCocktails()">
+    </div>
+    <ul class="cocktail-list">
+      <li *ngFor="let cocktail of filteredCocktails" class="cocktail-item" (click)="showCocktailDetails(cocktail)">{{ cocktail.strDrink }}</li>
+    </ul>
+    <div *ngIf="selectedCocktail" class="cocktail-details">
+      <h2>{{ selectedCocktail.strDrink }}</h2>      
+      <p>{{ selectedCocktail.strDrinkAlternate }}</p>      
+      <p>Instructions : {{ selectedCocktail.strInstructions }}</p>
+      <p>Category : {{ selectedCocktail.strCategory }}</p>
+      <p>IBA : {{ selectedCocktail.strIBA }}</p>
+      <p>Drink type : {{ selectedCocktail.strAlcoholic }}</p>
+      <p>Recommended glass : {{ selectedCocktail.strGlass }}</p>     
+      <p>Tags : {{ selectedCocktail.strTags }}</p> 
+  </div>
