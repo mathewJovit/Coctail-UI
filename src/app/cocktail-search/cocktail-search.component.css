@@ -65,13 +65,30 @@
     transform: translateY(-3px);
   }
   
-  .cocktail-details {
-    display: flex;    
-    margin-top: 20px;
+  .cocktail-details {      
+    width:fit-content;     
+    margin-top: 20px auto;
     padding: 10px;
-    background-color: #fff;
+    font-family: Arial, sans-serif; 
+    font-size: 16px; 
+    line-height: 1.5;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.6);
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .cocktail-text{
+    padding-left: 50px;
+    display:table-row;
+  }
+
+  .cocktail-image {
+    padding-left: 50px;
+    width: 200px;
+    height: 200px;
   }
   
   .cocktail-details h2 {

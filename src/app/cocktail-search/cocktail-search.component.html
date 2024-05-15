@@ -6,8 +6,10 @@
     <ul class="cocktail-list">
       <li *ngFor="let cocktail of filteredCocktails" class="cocktail-item" (click)="showCocktailDetails(cocktail)">{{ cocktail.strDrink }}</li>
     </ul>
-    <div *ngIf="selectedCocktail" class="cocktail-details">
-      <h2>{{ selectedCocktail.strDrink }}</h2>      
+    <div *ngIf="selectedCocktail" class="cocktail-details">      
+      <h2>{{ selectedCocktail.strDrink }}</h2>
+      <img [src]="selectedCocktail.strDrinkThumb" alt="Cocktail Image" class="cocktail-image" />
+      <div class="cocktail-text">
       <p>{{ selectedCocktail.strDrinkAlternate }}</p>      
       <p>Instructions : {{ selectedCocktail.strInstructions }}</p>
       <p>Category : {{ selectedCocktail.strCategory }}</p>
@@ -15,4 +17,5 @@
       <p>Drink type : {{ selectedCocktail.strAlcoholic }}</p>
       <p>Recommended glass : {{ selectedCocktail.strGlass }}</p>     
       <p>Tags : {{ selectedCocktail.strTags }}</p> 
+    </div>
   </div>

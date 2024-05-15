@@ -24,6 +24,5 @@ export class CocktailSearchComponent {
 
   showCocktailDetails(cocktail: Cocktail) {
     this.selectedCocktail = cocktail;
-    this.filteredCocktails=null;
   }
 }
