@@ -3,9 +3,18 @@
     <div class="search-container">
       <input type="text" class="search-input" placeholder="Search cocktails..." [(ngModel)]="searchQuery" (keyup.enter)="searchCocktails()">
     </div>
+    <div *ngIf="loading">
+      <ng-template #loadingIcon>
+        <div class="loading-spinner">
+            <i class="fa fa-spinner fa-spin"></i> Loading...
+        </div>
+    </ng-template>
+    <ng-container *ngTemplateOutlet="loadingIcon"></ng-container></div>
+    <div *ngIf="!loading">
     <ul class="cocktail-list">
       <li *ngFor="let cocktail of filteredCocktails" class="cocktail-item" (click)="showCocktailDetails(cocktail)">{{ cocktail.strDrink }}</li>
-    </ul>
+    </ul>  
+    </div>  
     <div *ngIf="selectedCocktail" class="cocktail-details">      
       <h2>{{ selectedCocktail.strDrink }}</h2>
       <img [src]="selectedCocktail.strDrinkThumb" alt="Cocktail Image" class="cocktail-image" />

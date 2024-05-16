@@ -9,6 +9,7 @@ import { Cocktail } from './cocktail.model';
 })
 export class CocktailSearchComponent {
   searchQuery: string = '';
+  loading: any;
 
   constructor(private cocktailService: CocktailService) { }
 
@@ -17,9 +18,11 @@ export class CocktailSearchComponent {
   filteredCocktails: any;
 
   async searchCocktails() {
+    this.loading=true;
     this.cocktails = await this.cocktailService.getCocktails(this.searchQuery);
     this.filteredCocktails = this.cocktails;
     this.selectedCocktail = null; 
+    this.loading=false;
   }
 
   showCocktailDetails(cocktail: Cocktail) {
